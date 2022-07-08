@@ -29,8 +29,13 @@ sap.ui.define([
 				}
 			});
 			oQuery = oArgs["?query"];
-			if (oQuery && _aValidTabKeys.indexOf(oQuery.tab) > -1){
+			if (oQuery && _aValidTabKeys.indexOf(oQuery.tab) > -1) {
 				oView.getModel("view").setProperty("/selectedTabKey", oQuery.tab);
+				// support lazy loading for the hobbies and notes tab
+				if (oQuery.tab === "Hobbies" || oQuery.tab === "Notes") {
+					// the target is either "resumeTabHobbies" or "resumeTabNotes"
+					this.getRouter().getTargets().display("resumeTab" + oQuery.tab);
+				}
 			} else {
 				// the default query param should be visible at all time
 				this.getRouter().navTo("employeeResume", {
@@ -48,7 +53,7 @@ sap.ui.define([
 				this.getRouter().getTargets().display("notFound");
 			}
 		},
-		onTabSelect: function (oEvent){
+		onTabSelect: function (oEvent) {
 			var oCtx = this.getView().getBindingContext();
 			this.getRouter().navTo("employeeResume", {
 				employeeId: oCtx.getProperty("EmployeeID"),

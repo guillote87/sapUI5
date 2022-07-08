@@ -14,7 +14,7 @@
 				class="sapUiResponsiveContentPadding"
 				binding="{Resume}"
 				select=".onTabSelect"
-				selectedKey="{view>/selectedTabKey}">>
+				selectedKey="{view>/selectedTabKey}">
 				<items>
 					<IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
 						<Text text="{Information}"/>
@@ -22,11 +22,11 @@
 					<IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
 						<mvc:XMLView viewName="sap.ui.demo.nav.view.employee.ResumeProjects"></mvc:XMLView>
 					</IconTabFilter>
-					<IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-						<Text text="{Hobbies}"/>
+				<IconTabFilter id="hobbiesTab" text="{i18n>Hobbies}" key="Hobbies">
+						<!-- place content via lazy loading -->
 					</IconTabFilter>
-					<IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-						<Text text="{Notes}"/>
+					<IconTabFilter id="notesTab" text="{i18n>Notes}" key="Notes">
+						<!-- place content via lazy loading -->
 					</IconTabFilter>
 				</items>
 			</IconTabBar>
