@@ -1,0 +1,24 @@
+<mvc:View
+controllerName="sap.ui.demo.nav.controller.category.CategoryList"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc"
+>
+
+ <Page 
+    id="categoriesListPage"
+    title="Categories List"
+    class="sapUiResponsiveContentPadding">
+    <content>
+        <List id="categoryList" headerText="{i18n>ListOfCategories}" items="{/Categories}">
+            <items>
+            <StandardListItem
+               title="{CategoryName}"
+               description="{Description}"
+               type="Navigation" 
+				press=".onListItemPressed"/>
+            </items>
+        </List>
+    </content>
+</Page>
+
+</mvc:View>

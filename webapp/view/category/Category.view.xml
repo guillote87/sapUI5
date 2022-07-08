@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="sap.ui.demo.nav.controller.category.Category"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	busyIndicatorDelay="0">
+	<Page
+		id="categoryPage"
+		title="Products in  {CategoryName}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel
+				id="categoryPanel"
+				width="auto"
+				class="sapUiNoContentPadding">
+			<List id="productInCategoryList" headerText="Products in  {CategoryName}" items="{/Categories}">
+            <items>
+            <StandardListItem
+               title="{CategoryName}"
+               description="{Description}"/>
+            </items>
+        </List>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

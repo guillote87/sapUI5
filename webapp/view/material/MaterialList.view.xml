@@ -1,0 +1,18 @@
+<mvc:View controllerName="sap.ui.demo.nav.controller.material.MaterialList" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page id="materialListPage" title="{i18n>MaterialList}" showNavButton="true" navButtonPress=".onNavBack"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<List id="materialList" headerText="{i18n>ListOfAllMaterials}" items="{/Materials}">
+				<items>
+					<StandardListItem 
+						title="{Material} "
+						description="{TextoBreveEs}"
+						iconDensityAware="false"
+						iconInset="false" 
+						type="Navigation" 
+						press=".onListItemPressed" />
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>
